@@ -1,8 +1,12 @@
+import Heading from "@/components/Heading";
+
 export default function FeedPage() {
   return (
     <>
-      <h1>Feed</h1>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <Heading
+        title="Feed"
+        description="Pessoas, projetos e oportunidades relevantes para o teu percurso."
+      />
     </>
   );
 }
