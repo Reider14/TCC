@@ -1,0 +1,33 @@
+.viewport {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 200;
+  max-width: calc(100vw - 48px);
+  pointer-events: none;
+}
+
+.toast {
+  padding: 12px 18px;
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: 0 10px 30px var(--shadow-color-1);
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+@media (max-width: 480px) {
+  .viewport {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    max-width: none;
+  }
+
+  .toast {
+    width: 100%;
+  }
+}

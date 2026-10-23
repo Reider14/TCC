@@ -1,0 +1,46 @@
+/* Tema claro padrao da plataforma. */
+:root {
+  color-scheme: light;
+
+  /* Estrutura da plataforma */
+  --bg: #f7f7f7;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --border: #e5e7eb;
+  --hairline: var(--border);
+  --hairline-soft: color-mix(in srgb, var(--text) 6%, transparent);
+  --shadow-color-1: rgb(15 23 42 / 5%);
+
+  /* Texto */
+  --text: #000000;
+  --text-muted: #4b5563;
+  --text-subtle: var(--text-muted);
+
+  /* Navegação e destaque */
+  --sidebar-bg: var(--surface);
+  --accent: #075bc7;
+  --accent-light: #2498f2;
+  --accent-text: var(--accent);
+  --accent-soft: #eaf2ff;
+  --accent-tint-1: color-mix(in srgb, var(--accent) 7%, transparent);
+  --accent-tint-2: color-mix(in srgb, var(--accent) 13%, transparent);
+  --accent-line-2: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* Tema escuro opcional: <html data-theme="dark">. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #101010;
+  --surface: #181818;
+  --surface-2: #242424;
+  --border: #303030;
+  --shadow-color-1: rgb(0 0 0 / 35%);
+
+  --text: #f5f5f5;
+  --text-muted: #a3a3a3;
+
+  --accent: #2498f2;
+  --accent-light: #60a5fa;
+  --accent-soft: #102a43;
+}

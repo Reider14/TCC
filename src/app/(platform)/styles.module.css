@@ -1,0 +1,28 @@
+.platform {
+  min-height: 100vh;
+}
+
+.main {
+  min-width: 0;
+  flex: 1; /*Área principal ocupa o espaço flexível disponível*/
+  background: var(--bg);
+  padding: 32px 16px;
+}
+
+.content {
+  width: 100%;
+  max-width: 1290px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .main {
+    padding: 48px 32px;
+  }
+}
+
+@media (min-width: 1121px) {
+  .platform {
+    display: flex;
+  }
+}

@@ -1,0 +1,131 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  flex-shrink: 0;
+  min-height: 100vh;
+  padding: 36px 16px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+}
+
+.brand {
+  display: block;
+  margin-bottom: 40px;
+  padding: 0 16px;
+  color: var(--text);
+  font-size: 26px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link {
+  display: flex;
+  min-height: 54px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  color: var(--text-subtle);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.link svg {
+  flex-shrink: 0;
+}
+
+.link:hover {
+  border-color: var(--hairline-soft);
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.link.active {
+  border-color: var(--accent-line-2);
+  color: var(--text);
+  background: linear-gradient(
+    100deg,
+    var(--accent-tint-2),
+    var(--accent-tint-1)
+  );
+}
+
+.link.active svg {
+  color: var(--accent-text);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--border);
+}
+
+.footerAction {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 14px 16px;
+
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+
+  color: var(--text-subtle);
+  font-family: inherit;
+  font-size: 15px;
+  text-decoration: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.footerAction:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.footerAction strong {
+  font-weight: 600;
+}
+
+.themeLabel {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+@media (max-width: 1120px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .navigation {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .link {
+    white-space: nowrap;
+  }
+}
