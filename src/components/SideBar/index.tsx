@@ -14,7 +14,7 @@ import {
 import Link from "next/link";
 
 import styles from "./styles.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navigationItems = [
   { label: "Início", href: "/feed", icon: House },
@@ -34,15 +34,31 @@ const themeOptions = {
 export default function Sidebar() {
   const pathname = usePathname();
 
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
   const { icon: ThemeIcon, label: themeLabel } = themeOptions[theme];
 
+  // Recupera o tema salvo quando a Sidebar e montada.
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light" || savedTheme === "dark") {
+      // O estado precisa refletir a preferencia persistida do navegador.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setTheme(savedTheme);
+      document.documentElement.dataset.theme = savedTheme;
+      return;
+    }
+
+    document.documentElement.dataset.theme = "dark";
+  }, []);
+
+  // Alterna entre os temas claro e escuro.
   function toggleTheme() {
-    const nextTheme = theme === "light" ? "dark" : "light";
+    const nextTheme = theme === "dark" ? "light" : "dark";
 
     setTheme(nextTheme);
-
     document.documentElement.dataset.theme = nextTheme;
+    localStorage.setItem("theme", nextTheme);
   }
 
   return (

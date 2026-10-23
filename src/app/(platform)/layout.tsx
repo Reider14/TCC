@@ -1,5 +1,6 @@
 import Sidebar from "@/components/SideBar";
 import styles from "./styles.module.css";
+import { PlatformToastProvider } from "@/context/PlatformToastProvider/PlatformToastProvider";
 
 type PlatformLayoutProps = {
   children: React.ReactNode;
@@ -7,12 +8,14 @@ type PlatformLayoutProps = {
 
 export default function PlatformLayout({ children }: PlatformLayoutProps) {
   return (
-    <div className={styles.platform}>
-      <Sidebar />
+    <PlatformToastProvider>
+      <div className={styles.platform}>
+        <Sidebar />
 
-      <main className={styles.main}>
-        <div className={styles.content}>{children}</div>
-      </main>
-    </div>
+        <main className={styles.main}>
+          <div className={styles.content}>{children}</div>
+        </main>
+      </div>
+    </PlatformToastProvider>
   );
 }

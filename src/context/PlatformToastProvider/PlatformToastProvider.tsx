@@ -38,6 +38,7 @@ export function PlatformToastProvider({
       {children}
 
       {children && (
+        //  tecnologias de assesiblidade
         <div role="status">
           <span></span>
           <span>{message}</span>
